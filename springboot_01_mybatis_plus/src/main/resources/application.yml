@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: springboot_01_mybatis_plus
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC
+    username: root
+    password: root

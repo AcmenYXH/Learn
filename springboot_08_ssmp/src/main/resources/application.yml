@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: springboot_08_ssmp
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC
+      username: root
+      password: root
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tb_ #\u8BBE\u7F6E\u8868\u524D\u7F00
+      id-type: auto #\u8BBE\u7F6E\u4E3B\u952E\u81EA\u589E
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+servers:
+  ipAddress: 192.168.0.1
+  port: 123
+  timeout: -1
+logging:
+  level:
+    root: info

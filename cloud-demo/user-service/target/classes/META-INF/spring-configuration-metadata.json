@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "pattern",
+      "type": "cn.itcast.user.config.PatternProperties",
+      "sourceType": "cn.itcast.user.config.PatternProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "pattern.dateformat",
+      "type": "java.lang.String",
+      "sourceType": "cn.itcast.user.config.PatternProperties"
+    },
+    {
+      "name": "pattern.env-shared-value",
+      "type": "java.lang.String",
+      "sourceType": "cn.itcast.user.config.PatternProperties"
+    },
+    {
+      "name": "pattern.name",
+      "type": "java.lang.String",
+      "sourceType": "cn.itcast.user.config.PatternProperties"
+    }
+  ],
+  "hints": []
+}
