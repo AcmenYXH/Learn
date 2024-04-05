@@ -11,3 +11,6 @@ spring:
     listener:
       simple:
         prefetch: 1
+        acknowledge-mode: auto # 确认机制
+        retry:
+          enabled: true # 开启重试机制

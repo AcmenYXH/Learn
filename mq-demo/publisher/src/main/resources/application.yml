@@ -10,3 +10,10 @@ spring:
     virtual-host: /hmall
     username: hmall
     password: 123
+    connection-timeout: 1s
+    template:
+      retry:
+        enabled: true
+        multiplier: 2
+    publisher-confirm-type: none
+    publisher-returns: false
