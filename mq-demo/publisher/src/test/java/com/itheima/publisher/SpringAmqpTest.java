@@ -16,7 +16,7 @@ public class SpringAmqpTest {
     @Test
     void testSendMessage2Queue() {
         String queueName = "simple.queue";
-        String msg = "hello, amqp!";
+        String msg = "hello, amqp22222!";
         rabbitTemplate.convertAndSend(queueName, msg);
     }
 
@@ -40,22 +40,25 @@ public class SpringAmqpTest {
     @Test
     void testSendDirect() {
         String exchangeName = "hmall.direct";
-        String msg = "蓝色通知，警报解除，哥斯拉是放的气球";
-        rabbitTemplate.convertAndSend(exchangeName, "blue", msg);
+        String msg = "红色通知，警报解除，哥斯拉是放的气球";
+        rabbitTemplate.convertAndSend(exchangeName, "red", msg);
     }
 
     @Test
     void testSendTopic() {
         String exchangeName = "hmall.topic";
-        String msg = "今天天气挺不错，我的心情的挺好的";
-        rabbitTemplate.convertAndSend(exchangeName, "china.weather", msg);
+        String msg = "中国，每天新鲜事";
+        rabbitTemplate.convertAndSend(exchangeName, "china.news", msg);
     }
 
     @Test
     void testSendObject() {
+        // 创建一个Map，用于存储消息
         Map<String, Object> msg = new HashMap<>(2);
+        // 向Map中添加name和age键值对
         msg.put("name", "jack");
         msg.put("age", 21);
+        // 发送消息到名为object.queue的队列
         rabbitTemplate.convertAndSend("object.queue", msg);
     }
 }
