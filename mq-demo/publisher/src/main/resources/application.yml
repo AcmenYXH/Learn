@@ -13,7 +13,7 @@ spring:
     connection-timeout: 1s
     template:
       retry:
-        enabled: true
-        multiplier: 2
+        enabled: true #开启发送失败重试
+        multiplier: 2 #重试次数的倍数，即当发送失败时，会按照此倍数进行重试
     publisher-confirm-type: none
     publisher-returns: false

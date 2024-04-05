@@ -14,3 +14,4 @@ spring:
         acknowledge-mode: auto # 确认机制
         retry:
           enabled: true # 开启重试机制
+          max-attempts: 3 # 最多重试3次
