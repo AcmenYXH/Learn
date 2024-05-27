@@ -15,4 +15,14 @@ class CustomAnnotationApplicationTests {
         System.out.println("主线程逻辑");
     }
 
+    @Test
+    void simpleCacheTest() throws Exception {
+        SimpleCache simpleCache = new SimpleCache(10*1000);
+        simpleCache.put("aa", 121211L);
+        Thread.sleep(1000);
+        System.out.println("获取值："+simpleCache.get("aa"));
+        Thread.sleep(10*1000);
+        System.out.println("获取值："+simpleCache.get("aa"));
+    }
+
 }
