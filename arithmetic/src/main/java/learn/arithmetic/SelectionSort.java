@@ -8,4 +8,19 @@ package learn.arithmetic;
  * @Date 2024/3/16 17:34
  */
 public class SelectionSort {
+    public static void selectionSort(int[] arr) {
+        for (int i = 0, len = arr.length; i < len; i++) {
+            int index = i;
+            for (int j = i + 1; j < len; j++) {
+                if (arr[index] > arr[j]) {
+                    index = j;
+                }
+            }
+            if (index != i) {
+                int temp = arr[i];
+                arr[i] = arr[index];
+                arr[index] = temp;
+            }
+        }
+    }
 }

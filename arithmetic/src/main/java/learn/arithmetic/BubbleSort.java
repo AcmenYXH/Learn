@@ -17,21 +17,22 @@ public class BubbleSort {
      * @author yangxh8
      * @date 2024/3/16 17:24
      **/
-    public static void sort(int[] array) {
-        int i, j;
+    public static int sort(int[] array) {
+        int i, j,count=0;
         int n = array.length;
         for (i = 0; i < n; i++) {
             //表示 n 次排序过程。
             for (j = 1; j < n - i; j++) {
                 if (array[j - 1] > array[j]) {
+                    count++;
                     //前面的数字大于后面的数字就交换
                     //交换 array[j-1]和 array[j]
-                    int temp;
-                    temp = array[j - 1];
+                    int temp = array[j - 1];
                     array[j - 1] = array[j];
                     array[j] = temp;
                 }
             }
         }
+        return count;
     }
 }
