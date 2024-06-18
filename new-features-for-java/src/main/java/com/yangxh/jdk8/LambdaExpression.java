@@ -12,7 +12,7 @@ import java.util.function.Consumer;
  * @Author yangxh8
  * @Date 2024/5/27 21:26
  */
-public class Lambda {
+public class LambdaExpression {
     public static void main(String[] args) {
         // 1、普通匿名内部类实现方式
         new Thread(new Runnable() {
