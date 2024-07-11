@@ -70,6 +70,7 @@ public class PayController {
         if (log.isDebugEnabled()) {
             log.debug("PayController--getPayById--id={}", JSON.toJSONString(id));
         }
+        if(id<0) throw new RuntimeException("id不能为负数");
         Pay pay = payService.getById(id);
 //        return "成功查询记录，返回值：" + pay;
         return ResultData.success(pay);
