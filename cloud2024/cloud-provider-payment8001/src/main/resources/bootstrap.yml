@@ -15,3 +15,5 @@ spring:
       config:
         profile-separator: '-' # default value is ","，we update '-'
         format: YAML
+        watch:
+          wait-time: 1 # Consul的配置刷新时间，不建议修改这个值
