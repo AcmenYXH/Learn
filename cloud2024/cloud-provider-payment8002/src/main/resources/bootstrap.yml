@@ -1,0 +1,19 @@
+# ==========applicationName + druid-mysql8 driver===================
+spring:
+  application:
+    name: cloud-payment-service
+  ###Spring Cloud Consul for Service Discovery
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        health-check-url: http://localhost:8500/management/health
+        heartbeat:
+          enabled: true
+      config:
+        profile-separator: '-' # default value is ","，we update '-'
+        format: YAML
+        watch:
+          wait-time: 1 # Consul的配置刷新时间，不建议修改这个值
