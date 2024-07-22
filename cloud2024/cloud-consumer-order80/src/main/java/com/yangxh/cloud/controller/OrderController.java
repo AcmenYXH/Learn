@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping(value = "/consumer")
 public class OrderController {
-//    public static final String PaymentSrv_URL = "http://localhost:8001";//先写死，硬编码
+    //    public static final String PaymentSrv_URL = "http://localhost:8001";//先写死，硬编码
     public static final String PaymentSrv_URL = "http://cloud-payment-service";//服务注册中心上的微服务名称
     @Autowired
     private RestTemplate restTemplate;
@@ -42,12 +42,17 @@ public class OrderController {
     @DeleteMapping("/pay/delete/{id}")
     public ResultData deletePay(@PathVariable("id") Integer id) {
 //        restTemplate.delete(PaymentSrv_URL + "/pay/delete/" + id);
-        return restTemplate.postForObject(PaymentSrv_URL + "/pay/delete"+id, id, ResultData.class);
+        return restTemplate.postForObject(PaymentSrv_URL + "/pay/delete" + id, id, ResultData.class);
     }
 
     // 修改操作
-    @PutMapping("/pay/update")
-    public ResultData updatePay(PayDTO payDTO) {
-        return restTemplate.patchForObject(PaymentSrv_URL + "/pay/update", payDTO, ResultData.class);
+    @GetMapping("/pay/getAll")
+    public ResultData getAll() {
+        return restTemplate.getForObject(PaymentSrv_URL + "/pay/getAll", ResultData.class);
+    }
+
+    @GetMapping(value = "/pay/get/info")
+    private ResultData getInfoByConsul() {
+        return restTemplate.getForObject(PaymentSrv_URL + "/pay/get/info", ResultData.class);
     }
 }
