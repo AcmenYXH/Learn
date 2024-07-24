@@ -72,6 +72,11 @@ public class PayController {
             log.debug("PayController--getPayById--id={}", JSON.toJSONString(id));
         }
         if (id < 0) throw new RuntimeException("id不能为负数");
+        try {
+            Thread.sleep(62000L);
+        } catch (InterruptedException e) {
+            log.error("PayController--getPayById--error=", e);
+        }
         Pay pay = payService.getById(id);
 //        return "成功查询记录，返回值：" + pay;
         return ResultData.success(pay);
