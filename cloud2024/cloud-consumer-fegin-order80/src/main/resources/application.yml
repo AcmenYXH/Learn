@@ -17,10 +17,17 @@ spring:
         config:
           default: # 全局配置
             connectTimeout: 1000 #连接超时时间，默认为2s=2000
-            readTimeout: 3000 #读取超时时间，默认为60s=60000
+            readTimeout: 2000 #读取超时时间，默认为60s=60000
           cloud-payment-service: # 设置单个服务的超时时间
-            connectTimeout: 5000 #连接超时时间
-            readTimeout: 7000 #读取超时时间
+            connectTimeout: 2000 #连接超时时间
+            readTimeout: 4000 #读取超时时间
       httpclient:
         hc5:
+          enabled: true
+      compression:
+        request:
+          enabled: true
+          min-request-size: 2048 #最小触发压缩的大小
+          mime-types: text/xml,application/xml,application/json #触发压缩数据类型
+        response:
           enabled: true
