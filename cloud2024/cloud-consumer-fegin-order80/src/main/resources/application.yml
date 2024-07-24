@@ -21,3 +21,6 @@ spring:
           cloud-payment-service: # 设置单个服务的超时时间
             connectTimeout: 5000 #连接超时时间
             readTimeout: 7000 #读取超时时间
+      httpclient:
+        hc5:
+          enabled: true
