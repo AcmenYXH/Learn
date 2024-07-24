@@ -31,3 +31,11 @@ spring:
           mime-types: text/xml,application/xml,application/json #触发压缩数据类型
         response:
           enabled: true
+# feign日志以什么级别监控哪个接口
+logging:
+  level:
+    com:
+      yangxh:
+        cloud:
+          api:
+            PayFeginApi: debug
